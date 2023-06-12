@@ -3,12 +3,14 @@ import {Component} from 'react'
 import './index.css'
 
 class ReviewsCarousel extends Component {
-  state = {index: 0}
+    state = {index: 0}
 
   onLeftClick = () => {
     const {index} = this.state
     if (index > 0) {
       this.setState(prevState => ({index: prevState.index - 1}))
+    } else {
+      this.setState({index: 3})
     }
   }
 
@@ -16,6 +18,8 @@ class ReviewsCarousel extends Component {
     const {index} = this.state
     if (index < 3) {
       this.setState(prevState => ({index: prevState.index + 1}))
+    } else {
+      this.setState({index: 0})
     }
   }
 
